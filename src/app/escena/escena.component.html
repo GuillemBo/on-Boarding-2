@@ -1,18 +1,17 @@
-
-
 <div class="d-flex justify-content-center pt-5">
-  <div class="card rounded-5" style="width: 18rem;">
-    <img src="assets/time_managment.svg" class="card-img-top custom-bg-color p-5 custom-card-height" alt="">
+  <div class="card rounded-5" style="width: 18rem;" [@animImageSlider]="currentStep">
+    <img src="{{imgSrc}}" class="card-img-top custom-bg-color p-5 custom-card-height" alt="...">
     <div class="card-body">
 
-        <h5 class="card-title">{{steps[currentStep].title}}</h5>
+        <h5 class="card-title">{{steps[currentStep].title}} </h5>
         <p class="card-text">{{steps[currentStep].description}}</p>
 
       <div class="d-flex justify-content-start">
 
         @for (step of steps; track $index) {
-          <a href="#" class=""></a>
           <span
+          (click)="goToStep($index)"
+          (click)="changeImg(currentStep)"
           [class.small-button-selected]="currentStep === $index"
           class="small-button  black-line rounded me-1">
         </span>
@@ -23,6 +22,7 @@
         @if (currentStep > 0){
           <button
           (click)="prevStep()"
+          (click)="changeImg(currentStep)"
           class="btn btn-light border-dark rounded-circle">
           &#8592;
           </button>
@@ -30,6 +30,7 @@
         @if (currentStep < steps.length - 1){
           <button
           (click)="nextStep()"
+          (click)="changeImg(currentStep)"
           class="btn btn-dark rounded-circle">
           &#8594;
           </button>
