@@ -1,43 +1,51 @@
-<div class="d-flex justify-content-center pt-5">
-  <div class="card rounded-5" style="width: 18rem;" [@animImageSlider]="currentStep">
-    <img src="{{imgSrc}}" class="card-img-top custom-bg-color p-5 custom-card-height" alt="...">
+
+<div class="d-flex justify-content-center pt-5" [@animImageSlider]="currentStep">
+
+  @for (step of steps; track $index) {
+  @if ($index === currentStep){
+
+  <div class="card rounded-5 position-absolute" style="width: 18rem;" *ngFor="let step of steps; let i = index" [@animImageSlider]="i === currentStep ? 'active' : 'inactive'" [style.display]="i === currentStep ? 'block' : 'none'">
+
+      <div class="img-container" [style.backgroundColor]="steps[currentStep].bgcolor" >
+        <img src="{{steps[currentStep].img}}" class="card-img-top p-5 custom-card-height" alt="...">
+      </div>
+
     <div class="card-body">
 
         <h5 class="card-title">{{steps[currentStep].title}} </h5>
         <p class="card-text">{{steps[currentStep].description}}</p>
 
-      <div class="d-flex justify-content-start">
+      <div class="d-flex justify-content-start" >
 
-        @for (step of steps; track $index) {
-          <span
-          (click)="goToStep($index)"
-          (click)="changeImg(currentStep)"
-          [class.small-button-selected]="currentStep === $index"
-          class="small-button  black-line rounded me-1">
-        </span>
-      }
+          @for (step of steps; track $index) {
+            <span
+            (click)="goToStep($index)"
+            [class.small-button-selected]="currentStep === $index"
+            class="small-button  black-line rounded me-1">
+          </span>
+        }
       </div>
       <div class="d-flex justify-content-end gap-2">
 
-        @if (currentStep > 0){
-          <button
-          (click)="prevStep()"
-          (click)="changeImg(currentStep)"
-          class="btn btn-light border-dark rounded-circle">
-          &#8592;
-          </button>
-        }
-        @if (currentStep < steps.length - 1){
-          <button
-          (click)="nextStep()"
-          (click)="changeImg(currentStep)"
-          class="btn btn-dark rounded-circle">
-          &#8594;
-          </button>
-        }
+          @if (currentStep > 0){
+            <button
+            (click)="prevStep()"
+            class="btn btn-light border-dark rounded-circle">
+            &#8592;
+            </button>
+          }
+           @if (currentStep < steps.length - 1){
+            <button
+            (click)="nextStep()"
+            class="btn btn-dark rounded-circle">
+            &#8594;
+            </button>
+          }
 
       </div>
     </div>
   </div>
+}
+}
 </div>
 

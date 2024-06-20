@@ -3,6 +3,7 @@ import { EscenaComponent } from '../escena/escena.component';
 import { StepsService } from '../services/steps.service';
 import { iStep } from '../interfaces/i-step.interface';
 
+
 @Component({
   selector: 'app-home',
   standalone: true,
