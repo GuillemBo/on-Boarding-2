@@ -1,27 +1,43 @@
-# OnBoarding
+## 📄 Descripción
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
+Este repositorio contiene los recursos del frontend de la aplicación onBoarding, un pase de tarjetas informativas con cambio dinámico y animacion aplicada con Angular. Se han usado diferentes componentes para aprender a usarlos.
 
-## Development server
+## ✨ Características
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Interfaz de Usuario Intuitiva** Diseño intuitivo y fácil de usar para una experiencia de usuario agradable.
 
-## Code scaffolding
+- **Diseño Responsivo:** Compatible con dispositivos móviles y de escritorio para una experiencia uniforme en todas las plataformas.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Personalización con Angular.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 💻 Tecnologías Utilizadas
 
-## Running unit tests
+- HTML5
+- SCSS
+- TypeScript
+- [Angular CLI](https://angular.dev/) version 17.1.2.
+- [Angular Material](https://material.angular.io/) version 17.1.2.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 📋 Requisitos
 
-## Running end-to-end tests
+- Node.js y npm instalados en tu sistema. Puedes descargarlos desde [nodejs.org](https://nodejs.org/).
+- Angular CLI instalado globalmente. Puedes instalarlo con el siguiente comando:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+npm install -g @angular/cli
+```
 
-## Further help
+Instala las dependencias:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+npm install
+```
+
+## ▶️ Ejecución
+
+Ejecuta la aplicación con el siguiente comando:
+
+```bash
+ng serve
+```
